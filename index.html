@@ -1,62 +1,86 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Dashboard Persuratan</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="sidebar">
-        <h2>Aplikasi Dokumen</h2>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Input New</a></li>
-            <li><a href="#">Dokumen Penting</a></li>
-        </ul>
-        <button class="logout">Sign Out</button>
+        <img src="logo.png" alt="Logo ST Indonesia" class="logo">
+        <nav>
+            <a href="#" class="active">🏠</a>
+            <a href="#">📩</a>
+            <a href="#">📤</a>
+            <a href="#">📁</a>
+        </nav>
+        <a href="#" class="logout">🚪 sign out</a>
     </div>
-    <div class="main-content">
+
+    <div class="main">
         <header>
-            <h1>Dashboard</h1>
-            <input type="text" id="search" placeholder="Search Document">
-            <div class="user-info">
-                <p>Hallo, <span id="username">Admin</span></p>
-            </div>
+            <h1>Aplikasi Dokumen <span>Sekretariat ST</span></h1>
+            <input type="search" placeholder="Search Document">
+            <div class="user">👤 Dadang (Admin)</div>
         </header>
-        <div class="cards">
+
+        <section class="cards">
             <div class="card">
-                <h3>Surat Masuk</h3>
-                <p id="incoming-docs">4,235</p>
+                <button class="input-btn">Input New</button>
+                <h2>Surat Masuk</h2>
+                <p>4.235<br><small>Total 2025</small></p>
             </div>
             <div class="card">
-                <h3>Surat Keluar</h3>
-                <p id="outgoing-docs">2,214</p>
+                <button class="input-btn">Input New</button>
+                <h2>Surat Keluar</h2>
+                <p>2.214<br><small>Total 2025</small></p>
             </div>
             <div class="card">
-                <h3>Dokumen Penting</h3>
-                <p id="important-docs">921</p>
+                <button class="input-btn">Input New</button>
+                <h2>Dokumen Penting</h2>
+                <p>921<br><small>Total 2025</small></p>
             </div>
-        </div>
-        <div class="chart">
-            <canvas id="myChart"></canvas>
-        </div>
-        <div class="tables">
+        </section>
+
+        <section class="chart">
+            <div class="chart-header">
+                <select>
+                    <option>Surat Masuk</option>
+                </select>
+                <select>
+                    <option>2025</option>
+                </select>
+            </div>
+            <div class="bar-chart" id="barChart"></div>
+        </section>
+
+        <section class="tables">
             <div class="table">
                 <h3>Surat Masuk</h3>
-                <table id="incoming-table"></table>
+                <table>
+                    <thead><tr><th>No. Doc</th><th>Pengirim</th><th>Perihal</th><th>Posisi</th></tr></thead>
+                    <tbody id="masuk"></tbody>
+                </table>
             </div>
             <div class="table">
                 <h3>Surat Keluar</h3>
-                <table id="outgoing-table"></table>
+                <table>
+                    <thead><tr><th>No. Doc</th><th>Pengirim</th><th>Perihal</th><th>Tujuan</th></tr></thead>
+                    <tbody id="keluar"></tbody>
+                </table>
             </div>
             <div class="table">
                 <h3>Dokumen / SK</h3>
-                <table id="document-table"></table>
+                <table>
+                    <thead><tr><th>No. Doc</th><th>PIC</th><th>Perihal</th></tr></thead>
+                    <tbody id="dokumen"></tbody>
+                </table>
             </div>
-        </div>
+        </section>
     </div>
-    <script src="firebase-config.js"></script>
+
     <script src="script.js"></script>
 </body>
 </html>
