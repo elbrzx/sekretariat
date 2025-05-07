@@ -1,79 +1,101 @@
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Anda bisa mengganti font sesuai keinginan */
+    background-color: #f7f7f7;
     margin: 0;
-    display: flex;
-}
-
-.sidebar {
-    background-color: #F52C2C;
-    color: white;
-    padding: 20px;
-    width: 250px;
-}
-
-.sidebar ul {
-    list-style: none;
     padding: 0;
 }
 
-.sidebar ul li {
-    margin: 15px 0;
+/* Header */
+.header {
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    background-color: #f00; /* Merah */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
 }
 
 .sidebar a {
     color: white;
     text-decoration: none;
+    margin: 20px 0;
 }
 
-.main-content {
+/* Dashboard */
+.dashboard {
     padding: 20px;
-    flex: 1;
-    background-color: #F7F7F7;
-}
-
-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 }
 
-.cards {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
+/* Card */
 .card {
-    background: #FFFFFF;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    margin: 0 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px 0;
 }
 
+/* Chart */
 .chart {
-    margin-top: 20px;
-}
-
-.tables {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
 }
 
+/* Table */
 .table {
-    flex: 1;
-    margin: 0 10px;
-}
-
-.table table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
-.table th, .table td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
+.table, .table th, .table td {
+    border: 1px solid #e0e0e0;
+}
+
+.table th {
+    background-color: #f00; /* Merah */
+    color: #ffffff;
+    padding: 10px;
+}
+
+.table td {
+    padding: 10px;
+}
+
+/* Button */
+.button {
+    background-color: #f00; /* Merah */
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #c00; /* Merah gelap */
 }
