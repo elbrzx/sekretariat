@@ -1,62 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting...</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #0a0a0a;
-      color: #ffffffcc;
-      font-family: 'Inter', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    h1 {
-      font-size: 1.2rem;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      color: #ffffffaa;
-      animation: fadeIn 1s ease-out forwards;
-    }
-
-    .spinner {
-      width: 36px;
-      height: 36px;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      border-top: 3px solid #00ffe1;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
-  <script>
-    setTimeout(() => {
-      window.location.href = "https://www.appsheet.com/start/b9048559-538e-4b24-aed7-c937f563eb95?platform=desktop#appName=2024-AGENDASURATSEKRETARIAT-741032626&vss=H4sIAAAAAAAAA52Qy07DMBBF_-Wu_QXeVpGKUMuiiA3uwo0naETqRPGEtor87x0DESCxaLqcx7k6MxM-mE478fU77Ov0Uz3SBRaTw_OlJwfrsOqiDF3rYBy2_vjVXD9tKoeMbJazOxLh-JYKb9D7gaJUuseU1hwCRVgZRsp7M0cLJdjpdit7_0EGrAbCDdNQcgql_Dej40Joo-zr9TiO4g8tfUrqftbWogfcofr3f7fpzsw_yuD0EKvAsumC1o1vE-VyR9PVY6LwonoLP1gCz72P4XfkFa5RTrRzAgAA&view=HOME";
-    }, 2000); // 2 detik delay
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard Persuratan</title>
 </head>
 <body>
-  <h1>Redirecting to Sekretariat App...</h1>
-  <div class="spinner"></div>
+    <div class="sidebar">
+        <h2>Aplikasi Dokumen</h2>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Input New</a></li>
+            <li><a href="#">Dokumen Penting</a></li>
+        </ul>
+        <button class="logout">Sign Out</button>
+    </div>
+    <div class="main-content">
+        <header>
+            <h1>Dashboard</h1>
+            <input type="text" id="search" placeholder="Search Document">
+            <div class="user-info">
+                <p>Hallo, <span id="username">Admin</span></p>
+            </div>
+        </header>
+        <div class="cards">
+            <div class="card">
+                <h3>Surat Masuk</h3>
+                <p id="incoming-docs">4,235</p>
+            </div>
+            <div class="card">
+                <h3>Surat Keluar</h3>
+                <p id="outgoing-docs">2,214</p>
+            </div>
+            <div class="card">
+                <h3>Dokumen Penting</h3>
+                <p id="important-docs">921</p>
+            </div>
+        </div>
+        <div class="chart">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="tables">
+            <div class="table">
+                <h3>Surat Masuk</h3>
+                <table id="incoming-table"></table>
+            </div>
+            <div class="table">
+                <h3>Surat Keluar</h3>
+                <table id="outgoing-table"></table>
+            </div>
+            <div class="table">
+                <h3>Dokumen / SK</h3>
+                <table id="document-table"></table>
+            </div>
+        </div>
+    </div>
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
